@@ -1,8 +1,4 @@
-﻿using H5_Webshop.DTOs;
-using H5_Webshop.Services;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System.Reflection.Metadata.Ecma335;
+﻿
 
 namespace H5_Webshop.Controllers
 {

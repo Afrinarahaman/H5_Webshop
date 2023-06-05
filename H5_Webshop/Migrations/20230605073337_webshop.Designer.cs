@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace H5_Webshop.Migrations
 {
     [DbContext(typeof(WebshopApiContext))]
-    [Migration("20230601180424_Webshop")]
-    partial class Webshop
+    [Migration("20230605073337_webshop")]
+    partial class webshop
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -43,12 +43,12 @@ namespace H5_Webshop.Migrations
                         new
                         {
                             Id = 1,
-                            CategoryName = "Toy"
+                            CategoryName = "Kids"
                         },
                         new
                         {
                             Id = 2,
-                            CategoryName = "T-Shirt"
+                            CategoryName = "Men"
                         });
                 });
 
@@ -92,17 +92,17 @@ namespace H5_Webshop.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            Description = "Kids Toys",
-                            Image = "microwave.jpg",
+                            Description = "kids dress",
+                            Image = "dress1.jpg",
                             Price = 299.99m,
                             Stock = (short)10,
-                            Title = " Kids Microwave"
+                            Title = " Fency dress"
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 2,
-                            Description = "T-Shirt for boys",
+                            Description = "T-Shirt for nen",
                             Image = "BlueTShirt.jpg",
                             Price = 199.99m,
                             Stock = (short)10,
@@ -112,27 +112,27 @@ namespace H5_Webshop.Migrations
                         {
                             Id = 3,
                             CategoryId = 1,
-                            Description = "Kids Toys",
-                            Image = "motorcycle.jpg",
-                            Price = 599.99m,
+                            Description = "Girls skirt",
+                            Image = "skirt1.jpg",
+                            Price = 159.99m,
                             Stock = (short)10,
-                            Title = " Kids Motorcycle"
+                            Title = " Skirt"
                         },
                         new
                         {
                             Id = 4,
                             CategoryId = 1,
-                            Description = "Soft Baby Sofa for Babies",
-                            Image = "BabySofa.jpg",
-                            Price = 399.99m,
+                            Description = "kids jumpersuit",
+                            Image = "jumpersuit1.jpg",
+                            Price = 279.99m,
                             Stock = (short)10,
-                            Title = " BabySofa"
+                            Title = " Jumpersuit"
                         },
                         new
                         {
                             Id = 5,
                             CategoryId = 2,
-                            Description = "T-Shirt for kids",
+                            Description = "T-Shirt for men",
                             Image = "RedT-Shirt.jpg",
                             Price = 199.99m,
                             Stock = (short)10,

@@ -20,24 +20,24 @@ namespace H5_Webshop.Database
                new()
                {
                    Id = 1,
-                   CategoryName = "Toy"
+                   CategoryName = "Kids"
 
 
                },
                new()
                {
                    Id = 2,
-                   CategoryName = "T-Shirt"
+                   CategoryName = "Men"
                }
                );
             modelBuilder.Entity<Product>().HasData(
                 new()
                 {
                     Id = 1,
-                    Title = " Kids Microwave",
+                    Title = " Fency dress",
                     Price = 299.99M,
-                    Description = "Kids Toys",
-                    Image = "microwave.jpg",
+                    Description = "kids dress",
+                    Image = "dress1.jpg",
                     Stock = 10,
                     CategoryId = 1
 
@@ -48,7 +48,7 @@ namespace H5_Webshop.Database
                     Id = 2,
                     Title = "Blue T-Shirt",
                     Price = 199.99M,
-                    Description = "T-Shirt for boys",
+                    Description = "T-Shirt for nen",
                     Image = "BlueTShirt.jpg",
                     Stock = 10,
                     CategoryId = 2
@@ -58,10 +58,10 @@ namespace H5_Webshop.Database
                 new()
                 {
                     Id = 3,
-                    Title = " Kids Motorcycle",
-                    Price = 599.99M,
-                    Description = "Kids Toys",
-                    Image = "motorcycle.jpg",
+                    Title = " Skirt",
+                    Price = 159.99M,
+                    Description = "Girls skirt",
+                    Image = "skirt1.jpg",
                     Stock = 10,
                     CategoryId = 1
 
@@ -69,10 +69,10 @@ namespace H5_Webshop.Database
                 new()
                 {
                     Id = 4,
-                    Title = " BabySofa",
-                    Price = 399.99M,
-                    Description = "Soft Baby Sofa for Babies",
-                    Image = "BabySofa.jpg",
+                    Title = " Jumpersuit",
+                    Price = 279.99M,
+                    Description = "kids jumpersuit",
+                    Image = "jumpersuit1.jpg",
                     Stock = 10,
                     CategoryId = 1
 
@@ -82,7 +82,7 @@ namespace H5_Webshop.Database
                     Id = 5,
                     Title = "Red T-Shirt",
                     Price = 199.99M,
-                    Description = "T-Shirt for kids",
+                    Description = "T-Shirt for men",
                     Image = "RedT-Shirt.jpg",
                     Stock = 10,
                     CategoryId = 2

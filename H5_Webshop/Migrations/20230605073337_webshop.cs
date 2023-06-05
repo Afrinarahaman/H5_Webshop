@@ -4,7 +4,7 @@
 
 namespace H5_Webshop.Migrations
 {
-    public partial class Webshop : Migration
+    public partial class webshop : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -48,23 +48,23 @@ namespace H5_Webshop.Migrations
             migrationBuilder.InsertData(
                 table: "Category",
                 columns: new[] { "Id", "CategoryName" },
-                values: new object[] { 1, "Toy" });
+                values: new object[] { 1, "Kids" });
 
             migrationBuilder.InsertData(
                 table: "Category",
                 columns: new[] { "Id", "CategoryName" },
-                values: new object[] { 2, "T-Shirt" });
+                values: new object[] { 2, "Men" });
 
             migrationBuilder.InsertData(
                 table: "Product",
                 columns: new[] { "Id", "CategoryId", "Description", "Image", "Price", "Stock", "Title" },
                 values: new object[,]
                 {
-                    { 1, 1, "Kids Toys", "microwave.jpg", 299.99m, (short)10, " Kids Microwave" },
-                    { 2, 2, "T-Shirt for boys", "BlueTShirt.jpg", 199.99m, (short)10, "Blue T-Shirt" },
-                    { 3, 1, "Kids Toys", "motorcycle.jpg", 599.99m, (short)10, " Kids Motorcycle" },
-                    { 4, 1, "Soft Baby Sofa for Babies", "BabySofa.jpg", 399.99m, (short)10, " BabySofa" },
-                    { 5, 2, "T-Shirt for kids", "RedT-Shirt.jpg", 199.99m, (short)10, "Red T-Shirt" }
+                    { 1, 1, "kids dress", "dress1.jpg", 299.99m, (short)10, " Fency dress" },
+                    { 2, 2, "T-Shirt for nen", "BlueTShirt.jpg", 199.99m, (short)10, "Blue T-Shirt" },
+                    { 3, 1, "Girls skirt", "skirt1.jpg", 159.99m, (short)10, " Skirt" },
+                    { 4, 1, "kids jumpersuit", "jumpersuit1.jpg", 279.99m, (short)10, " Jumpersuit" },
+                    { 5, 2, "T-Shirt for men", "RedT-Shirt.jpg", 199.99m, (short)10, "Red T-Shirt" }
                 });
 
             migrationBuilder.CreateIndex(
