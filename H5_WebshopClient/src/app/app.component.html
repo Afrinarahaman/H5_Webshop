@@ -1,3 +1,8 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+
+ 
 <ul class="nav nav-tabs" *ngIf="categories.length >0" id="no-bullets">
   <li><a routerLink="/" routerLinkActive="active-link w3-green" [routerLinkActiveOptions]="{exact:true}">Home</a>
   </li>
@@ -6,3 +11,28 @@
 </li>
  
 </ul>
+<a class="navbar-brand" href="#"> <img src="assets/image/logo1.jpg"></a>
+</div>
+</nav>
+
+<div  class="bg-image">
+  
+
+
+</div>
+
+
+
+
+
+
+<div class="footer bg-dark">
+  <!--fixed-bottom laver footer sticky på bunden -->
+
+  <p>Online Shop &copy;2023. All rights reserved.<br>CVR-1234656</p>
+  <a href="mailto:webshopsupport@abc.com">webshopsupport@abc.com</a>
+
+</div>
+
+
+<router-outlet></router-outlet>
