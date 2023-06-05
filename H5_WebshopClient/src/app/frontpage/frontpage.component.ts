@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../_models/product';
+import { ProductService } from '../_services/product.service';
 
 @Component({
   selector: 'app-frontpage',
@@ -15,23 +16,19 @@ export class FrontpageComponent implements OnInit {
   productId: number = 0;
   searchKey: string = "";
   searchProducts: Product[] = [];
-  productService: any;
-  constructor( private route: ActivatedRoute, private router: Router) { }
+
+  constructor( private productService: ProductService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.productService.getAllProducts().subscribe((x: Product[]) =>{ 
-      this.products = x;
-      this.searchProducts=this.products;
+    this.productService.getAllProducts().subscribe( (x: Product[])=> 
+      this.products = x);
+    
      
-      console.log(x);
+      console.log(this.products); 
       
-      this.route.params.subscribe(params => {
-        this.productService.getProductById(params['productId']).subscribe((x: Product) => this.product = x);
       
-    });
-
-  })
-  
   }
+  
+  
 
 }
