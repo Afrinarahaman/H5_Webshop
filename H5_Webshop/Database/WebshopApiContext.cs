@@ -19,21 +19,21 @@ namespace H5_Webshop.Database
             modelBuilder.Entity<Category>().HasData(
                new()
                {
-                   Id = 1,
+                   CategoryId = 1,
                    CategoryName = "Kids"
 
 
                },
                new()
                {
-                   Id = 2,
+                   CategoryId = 2,
                    CategoryName = "Men"
                }
                );
             modelBuilder.Entity<Product>().HasData(
                 new()
                 {
-                    Id = 1,
+                    ProductId = 1,
                     Title = " Fency dress",
                     Price = 299.99M,
                     Description = "kids dress",
@@ -45,7 +45,7 @@ namespace H5_Webshop.Database
 
                 new()
                 {
-                    Id = 2,
+                    ProductId = 2,
                     Title = "Blue T-Shirt",
                     Price = 199.99M,
                     Description = "T-Shirt for nen",
@@ -57,7 +57,7 @@ namespace H5_Webshop.Database
 
                 new()
                 {
-                    Id = 3,
+                    ProductId = 3,
                     Title = " Skirt",
                     Price = 159.99M,
                     Description = "Girls skirt",
@@ -68,7 +68,7 @@ namespace H5_Webshop.Database
                 },
                 new()
                 {
-                    Id = 4,
+                    ProductId = 4,
                     Title = " Jumpersuit",
                     Price = 279.99M,
                     Description = "kids jumpersuit",
@@ -79,7 +79,7 @@ namespace H5_Webshop.Database
                 },
                 new()
                 {
-                    Id = 5,
+                    ProductId = 5,
                     Title = "Red T-Shirt",
                     Price = 199.99M,
                     Description = "T-Shirt for men",

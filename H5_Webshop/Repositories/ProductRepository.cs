@@ -9,13 +9,13 @@ namespace H5_Webshop.Repositories
         public interface IProductRepository
         {
             Task<List<Product>> SelectAllProducts();
-            Task<Product> SelectProductById(int productId);
+            Task<Product> SelectProductById(int product_Id);
 
-            Task<List<Product>> GetProductsByCategoryId(int categoryId);
+            Task<List<Product>> GetProductsByCategoryId(int category_Id);
             Task<Product> InsertNewProduct(Product product);
-            Task<Product> UpdateExistingProduct(int productId, Product product);
+            Task<Product> UpdateExistingProduct(int product_Id, Product product);
 
-            Task<Product> DeleteProductById(int productId);
+            Task<Product> DeleteProductById(int product_Id);
 
     }
         public class ProductRepository : IProductRepository
@@ -38,20 +38,20 @@ namespace H5_Webshop.Repositories
                     .ToListAsync();
             }
 
-            public async Task<Product> SelectProductById(int productId)
+            public async Task<Product> SelectProductById(int product_Id)
             {
                 return await _context.Product
                     .Include(a => a.Category)
                     .OrderBy(a => a.CategoryId)
-                    .FirstOrDefaultAsync(product => product.Id == productId);
+                    .FirstOrDefaultAsync(product => product.ProductId == product_Id);
             }
-            public async Task<List<Product>> GetProductsByCategoryId(int CategoryId)
+            public async Task<List<Product>> GetProductsByCategoryId(int Category_Id)
             {
 
                 return await _context.Product
                     .Include(a => a.Category)
                     .OrderBy(a => a.CategoryId)
-                    .Where(a => a.CategoryId==CategoryId)
+                    .Where(a => a.CategoryId==Category_Id)
                     .ToListAsync();
             }
         public async Task<Product> InsertNewProduct(Product product)
@@ -60,9 +60,9 @@ namespace H5_Webshop.Repositories
             await _context.SaveChangesAsync();
             return product;
         }
-        public async Task<Product> UpdateExistingProduct(int productId, Product product)
+        public async Task<Product> UpdateExistingProduct(int product_Id, Product product)
         {
-            Product updateProduct = await _context.Product.FirstOrDefaultAsync(product => product.Id == productId);
+            Product updateProduct = await _context.Product.FirstOrDefaultAsync(product => product.ProductId == product_Id);
 
             if (updateProduct != null)
             {
@@ -79,9 +79,9 @@ namespace H5_Webshop.Repositories
             return updateProduct;
         }
 
-        public async Task<Product> DeleteProductById(int productId)
+        public async Task<Product> DeleteProductById(int product_Id)
         {
-            Product deleteProduct = await _context.Product.FirstOrDefaultAsync(product => product.Id == productId);
+            Product deleteProduct = await _context.Product.FirstOrDefaultAsync(product => product.ProductId == product_Id);
 
             if (deleteProduct != null)
             {

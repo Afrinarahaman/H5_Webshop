@@ -45,11 +45,11 @@ namespace H5_Webshop.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetById([FromRoute] int productId)
+        public async Task<IActionResult> GetById([FromRoute] int product_Id)
         {
             try
             {
-                ProductResponse productResponse = await _productService.GetProductById(productId);
+                ProductResponse productResponse = await _productService.GetProductById(product_Id);
 
                 if (productResponse == null)
                 {
@@ -71,11 +71,11 @@ namespace H5_Webshop.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetProductsByCategoryId([FromRoute] int categoryId)
+        public async Task<IActionResult> GetProductsByCategoryId([FromRoute] int category_Id)
         {
             try
             {
-                List<ProductResponse> productResponse = await _productService.GetProductsByCategoryId(categoryId);
+                List<ProductResponse> productResponse = await _productService.GetProductsByCategoryId(category_Id);
                 if (productResponse == null)
                 {
                     return Problem("Got no data, not even an empty list, this is unexpected");
@@ -152,11 +152,11 @@ namespace H5_Webshop.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Delete([FromRoute] int productId)
+        public async Task<IActionResult> Delete([FromRoute] int product_Id)
         {
             try
             {
-                ProductResponse productResponse = await _productService.DeleteProduct(productId);
+                ProductResponse productResponse = await _productService.DeleteProduct(product_Id);
 
                 if (productResponse == null)
                 {

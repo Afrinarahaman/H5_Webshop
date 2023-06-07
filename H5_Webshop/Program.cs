@@ -4,42 +4,48 @@ using H5_Webshop.Services;
 using Microsoft.EntityFrameworkCore;
 
 
-var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddTransient<IProductService, ProductService>();
-builder.Services.AddTransient<IProductRepository, ProductRepository>();
-builder.Services.AddTransient<ICategoryService, CategoryService>();
-builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
-
-// Add services to the container.
-builder.Services.AddDbContext<WebshopApiContext>(
-                o => o.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-
-var app = builder.Build();
-app.UseHttpsRedirection();
-
-app.UseCors(policy => policy
-    .AllowAnyOrigin()
-    .AllowAnyMethod()
-    .AllowAnyHeader());
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+public class Program
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    private static void Main(string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
+
+        builder.Services.AddTransient<IProductService, ProductService>();
+        builder.Services.AddTransient<IProductRepository, ProductRepository>();
+        builder.Services.AddTransient<ICategoryService, CategoryService>();
+        builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
+
+        // Add services to the container.
+        builder.Services.AddDbContext<WebshopApiContext>(
+                        o => o.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+
+        builder.Services.AddControllers();
+        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+        builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddSwaggerGen();
+
+
+        var app = builder.Build();
+        app.UseHttpsRedirection();
+
+        app.UseCors(policy => policy
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+
+        // Configure the HTTP request pipeline.
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI();
+        }
+
+        app.UseHttpsRedirection();
+
+        app.UseAuthorization();
+
+        app.MapControllers();
+
+        app.Run();
+    }
 }
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();

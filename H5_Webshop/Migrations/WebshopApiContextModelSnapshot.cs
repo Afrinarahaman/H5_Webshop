@@ -23,40 +23,39 @@ namespace H5_Webshop.Migrations
 
             modelBuilder.Entity("H5_Webshop.DTOs.Entities.Category", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("CategoryId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"), 1L, 1);
 
                     b.Property<string>("CategoryName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(20)");
 
-                    b.HasKey("Id");
+                    b.HasKey("CategoryId");
 
                     b.ToTable("Category");
 
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            CategoryId = 1,
                             CategoryName = "Kids"
                         },
                         new
                         {
-                            Id = 2,
+                            CategoryId = 2,
                             CategoryName = "Men"
                         });
                 });
 
             modelBuilder.Entity("H5_Webshop.DTOs.Entities.Product", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"), 1L, 1);
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
@@ -79,7 +78,7 @@ namespace H5_Webshop.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(32)");
 
-                    b.HasKey("Id");
+                    b.HasKey("ProductId");
 
                     b.HasIndex("CategoryId");
 
@@ -88,7 +87,7 @@ namespace H5_Webshop.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            ProductId = 1,
                             CategoryId = 1,
                             Description = "kids dress",
                             Image = "dress1.jpg",
@@ -98,7 +97,7 @@ namespace H5_Webshop.Migrations
                         },
                         new
                         {
-                            Id = 2,
+                            ProductId = 2,
                             CategoryId = 2,
                             Description = "T-Shirt for nen",
                             Image = "BlueTShirt.jpg",
@@ -108,7 +107,7 @@ namespace H5_Webshop.Migrations
                         },
                         new
                         {
-                            Id = 3,
+                            ProductId = 3,
                             CategoryId = 1,
                             Description = "Girls skirt",
                             Image = "skirt1.jpg",
@@ -118,7 +117,7 @@ namespace H5_Webshop.Migrations
                         },
                         new
                         {
-                            Id = 4,
+                            ProductId = 4,
                             CategoryId = 1,
                             Description = "kids jumpersuit",
                             Image = "jumpersuit1.jpg",
@@ -128,7 +127,7 @@ namespace H5_Webshop.Migrations
                         },
                         new
                         {
-                            Id = 5,
+                            ProductId = 5,
                             CategoryId = 2,
                             Description = "T-Shirt for men",
                             Image = "RedT-Shirt.jpg",

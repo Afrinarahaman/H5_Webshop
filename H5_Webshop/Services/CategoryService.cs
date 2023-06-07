@@ -12,8 +12,8 @@ namespace H5_Webshop.Services
         Task<CategoryResponse> GetCategoryById(int categoryId);
         Task<List<CategoryResponse>> GetAllCategoriesWithoutProducts();
         Task<CategoryResponse> CreateCategory(CategoryRequest newCategory);
-        Task<CategoryResponse> UpdateCategory(int categoryId, CategoryRequest updateCategory);
-        Task<CategoryResponse> DeleteCategory(int categoryId);
+        Task<CategoryResponse> UpdateCategory(int category_Id, CategoryRequest updateCategory);
+        Task<CategoryResponse> DeleteCategory(int category_Id);
     }
     public class CategoryService : ICategoryService
     {
@@ -71,11 +71,11 @@ namespace H5_Webshop.Services
             return null;
         }
 
-        public async Task<CategoryResponse> UpdateCategory(int categoryId, CategoryRequest updateCategory)
+        public async Task<CategoryResponse> UpdateCategory(int category_Id, CategoryRequest updateCategory)
         {
             Category category = MapCategoryRequestToCategory(updateCategory);
 
-            Category updatedCategory = await _categoryRepository.UpdateExistingCategory(categoryId, category);
+            Category updatedCategory = await _categoryRepository.UpdateExistingCategory(category_Id, category);
 
             if (updatedCategory != null)
             {
@@ -84,9 +84,9 @@ namespace H5_Webshop.Services
             return null;
         }
 
-        public async Task<CategoryResponse> DeleteCategory(int categoryId)
+        public async Task<CategoryResponse> DeleteCategory(int category_Id)
         {
-            Category deletedCategory = await _categoryRepository.DeleteCategoryById(categoryId);
+            Category deletedCategory = await _categoryRepository.DeleteCategoryById(category_Id);
 
             if (deletedCategory != null)
             {
@@ -106,15 +106,16 @@ namespace H5_Webshop.Services
         {
             return new CategoryResponse
             {
-                Id = categories.Id,
+                Id = categories.CategoryId,
                 CategoryName = categories.CategoryName,
                 Products = categories.Products.Select(category => new CategoryProductResponse
                 {
-                    Id = category.Id,
+                    Id = category.CategoryId,
                     Title = category.Title,
                     Price = category.Price,
                     Description = category.Description,
                     Image = category.Image,
+                    Stock = category.Stock
                    
 
                 }).ToList()
