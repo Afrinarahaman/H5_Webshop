@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="H5_Webshop.DTOs.Entities.Category">
+    <Position X="0.75" Y="1.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAACAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Models\Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H5_Webshop.Database.Entities.Order">
+    <Position X="8.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAADAAAAAAAAAAAAABAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H5_Webshop.Database.Entities.OrderDetails">
+    <Position X="6.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAECAAAAAAAAAAAAAAAAgAAACAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Models\OrderDetails.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H5_Webshop.DTOs.Entities.Product">
+    <Position X="3.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAQAgAkAAAAAAAAAAgAAAABAAAAAAAAAACAA=</HashCode>
+      <FileName>Models\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H5_Webshop.Database.Entities.Users">
+    <Position X="6.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAAAAAEAAAAAgAAAAAAAACAIAAAAAAAAg=</HashCode>
+      <FileName>Models\Users.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
