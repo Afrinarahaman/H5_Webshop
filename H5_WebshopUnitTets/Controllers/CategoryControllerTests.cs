@@ -4,7 +4,7 @@ using H5_Webshop.Services;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Moq;
 
-namespace ProjectWebshopTests.Controllers
+namespace H5_WebshopUnitTests.Controllers
 {
     public class CategoryControllerTests
     {

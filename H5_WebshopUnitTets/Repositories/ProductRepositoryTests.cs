@@ -4,7 +4,7 @@ using H5_Webshop.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace ProjectWebshopTests.Repositories
+namespace H5_WebshopUnitTets.Repositories
 {
     public class ProductRepositoryTests
     {

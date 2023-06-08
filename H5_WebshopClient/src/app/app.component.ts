@@ -15,7 +15,7 @@ export class AppComponent {
 
   title = 'Webshop_H5-Client';
   categories: Category[]=[];
-  category:Category = {id: 0, categoryName :""};
+  category:Category = {categoryId: 0, categoryName :""};
   categoryId:number =0;
   constructor(
     private router: Router,

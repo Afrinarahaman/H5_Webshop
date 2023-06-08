@@ -6,10 +6,10 @@
     <div class="row">
         <ng-container *ngFor="let item of products   "     >
             <div class="card col-md-3">
-                <a routerLink="/product_detail/{{item.product_id}}">
+                <a routerLink="/product_detail/{{item.productId}}">
                     <img src="/assets/image/{{item.image}}" alt="picture of products"></a>
                 <h5 style="white-space: nowrap;overflow: hidden;text-overflow:ellipsis;max-width: 100ch;">
-                    {{item.product_title}}</h5>
+                    {{item.title}}</h5>
             </div>
         </ng-container>
     </div>

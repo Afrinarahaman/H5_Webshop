@@ -7,7 +7,7 @@
   <li><a routerLink="/" routerLinkActive="active-link w3-green" [routerLinkActiveOptions]="{exact:true}">Home</a>
   </li>
   <li class="nav-item" *ngFor="let category of categories ">
-    <a routerLinkActive="active-link w3-green" routerLink="/category-products/{{category.id}}">{{category.categoryName}}</a>
+    <a routerLinkActive="active-link w3-green" routerLink="/category-products/{{category.categoryId}}">{{category.categoryName}}</a>
 </li>
  
 </ul>
