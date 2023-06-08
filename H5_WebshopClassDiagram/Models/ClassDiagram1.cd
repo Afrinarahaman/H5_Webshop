@@ -8,14 +8,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="H5_Webshop.Database.Entities.Order">
-    <Position X="8.5" Y="1.5" Width="1.5" />
+    <Position X="8.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAADAAAAAAAAAAAAABAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Order.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="H5_Webshop.Database.Entities.OrderDetails">
-    <Position X="6.5" Y="4.25" Width="1.5" />
+    <Position X="8.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAECAAAAAAAAAAAAAAAAgAAACAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>Models\OrderDetails.cs</FileName>
@@ -29,7 +29,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="H5_Webshop.Database.Entities.Users">
-    <Position X="6.25" Y="1.5" Width="1.5" />
+    <Position X="5.75" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAACAAAAAAEAAAAAgAAAAAAAACAIAAAAAAAAg=</HashCode>
       <FileName>Models\Users.cs</FileName>
