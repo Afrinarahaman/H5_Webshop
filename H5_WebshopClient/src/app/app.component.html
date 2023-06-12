@@ -1,17 +1,26 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-
+   
  
 <ul class="nav nav-tabs" *ngIf="categories.length >0" id="no-bullets">
   <li><a routerLink="/" routerLinkActive="active-link w3-green" [routerLinkActiveOptions]="{exact:true}">Home</a>
   </li>
   <li class="nav-item" *ngFor="let category of categories ">
     <a routerLinkActive="active-link w3-green" routerLink="/category-products/{{category.categoryId}}">{{category.categoryName}}</a>
+    
 </li>
- 
+<a class="navbar-brand" href="#"> <img src="assets/image/Chicbotique_logo.jpg"></a>
+<li>
+  <a routerLinkActive="active-link w3-green" >Login</a>
+    
+</li>
+<li>
+<a routerLinkActive="active-link w3-green" >Register</a>
+</li>
+
 </ul>
-<a class="navbar-brand" href="#"> <img src="assets/image/logo1.jpg"></a>
+
 </div>
 </nav>
 

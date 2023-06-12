@@ -1,10 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace H5_Webshop.DTOs.Entities
 {
-    public class Product
+    public class Product 
     {
         [Key]
         public int ProductId { get; set; }

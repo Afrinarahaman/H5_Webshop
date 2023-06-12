@@ -1,5 +1,5 @@
-﻿using Castle.Core.Resource;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿
+
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace H5_Webshop.Database.Entities
@@ -15,7 +15,15 @@ namespace H5_Webshop.Database.Entities
         public int UserId { get; set; }
 
         [ForeignKey("UserId")]
-        public Users User { get; set; }
+        
         public List<OrderDetails> OrderDetails { get; set; } = new();
+
+        public OrderDetails OrderDetails1
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

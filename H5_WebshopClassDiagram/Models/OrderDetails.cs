@@ -1,5 +1,5 @@
 ﻿using H5_Webshop.DTOs.Entities;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -26,12 +26,6 @@ namespace H5_Webshop.Database.Entities
 
 
         public int OrderId { get; set; }
-
-        [ForeignKey("OrderId")]
-        public Order Order { get; set; }
-
-        [ForeignKey("ProductId")]
-        public Product Product { get; set; }
 
     }
 }

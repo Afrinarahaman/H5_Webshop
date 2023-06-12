@@ -1,10 +1,11 @@
 ﻿namespace H5_Webshop.Helpers
 {
+    public enum Role
+    {
     
-        public enum Role
-        {
-            Administrator = 0,
-            Customer = 1
-        }
-    
+        Administrator = 0,
+        Customer = 1
+    }
+
+
 }

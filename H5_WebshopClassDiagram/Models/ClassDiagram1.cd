@@ -1,35 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="H5_Webshop.DTOs.Entities.Category">
-    <Position X="0.75" Y="1.5" Width="1.25" />
+    <Position X="4" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAACAAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>Models\Category.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="H5_Webshop.Database.Entities.Order">
-    <Position X="8.25" Y="1" Width="1.5" />
+    <Position X="6.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAADAAAAAAAAAAAAABAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>CAADAAgAAAAAAAAAABAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Order.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="OrderDetails1" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="H5_Webshop.Database.Entities.OrderDetails">
-    <Position X="8.25" Y="3.5" Width="1.5" />
+    <Position X="9.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAECAAAAAAAAAAAAAAAAgAAACAAAAAAAAAAAgAAAAAA=</HashCode>
+      <HashCode>EAACAAAAAAAAAAAAAAAAgAAACAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>Models\OrderDetails.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="H5_Webshop.DTOs.Entities.Product">
-    <Position X="3.25" Y="1.5" Width="1.5" />
+    <Position X="6" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAQAgAkAAAAAAAAAAgAAAABAAAAAAAAAACAA=</HashCode>
       <FileName>Models\Product.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="H5_Webshop.Database.Entities.Users">
-    <Position X="5.75" Y="1" Width="1.5" />
+    <Position X="3.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAACAAAAAAEAAAAAgAAAAAAAACAIAAAAAAAAg=</HashCode>
       <FileName>Models\Users.cs</FileName>

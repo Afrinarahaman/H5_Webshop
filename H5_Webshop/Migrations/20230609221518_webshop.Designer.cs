@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace H5_Webshop.Migrations
 {
     [DbContext(typeof(WebshopApiContext))]
-    [Migration("20230607072946_webshop")]
+    [Migration("20230609221518_webshop")]
     partial class webshop
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
