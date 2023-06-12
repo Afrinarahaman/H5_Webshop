@@ -45,11 +45,11 @@ namespace H5_Webshop.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetById([FromRoute] int product_Id)
+        public async Task<IActionResult> GetById([FromRoute] int productId)
         {
             try
             {
-                ProductResponse productResponse = await _productService.GetProductById(product_Id);
+                ProductResponse productResponse = await _productService.GetProductById(productId);
 
                 if (productResponse == null)
                 {
@@ -71,11 +71,11 @@ namespace H5_Webshop.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetProductsByCategoryId([FromRoute] int category_Id)
+        public async Task<IActionResult> GetProductsByCategoryId([FromRoute] int categoryId)
         {
             try
             {
-                List<ProductResponse> productResponse = await _productService.GetProductsByCategoryId(category_Id);
+                List<ProductResponse> productResponse = await _productService.GetProductsByCategoryId(categoryId);
                 if (productResponse == null)
                 {
                     return Problem("Got no data, not even an empty list, this is unexpected");

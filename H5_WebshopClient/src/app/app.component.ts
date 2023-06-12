@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategoryService } from './_services/category.service';
 import { Category } from './_models/category';
+import { CartService } from './_services/cart.service';
 
 
 @Component({
@@ -15,12 +16,13 @@ export class AppComponent {
 
   title = 'Webshop_H5-Client';
   categories: Category[]=[];
-  category:Category = {categoryId: 0, categoryName :""};
-  categoryId:number =0;
+  category:Category = {id: 0, categoryName :""};
+  public totalItem : number =this.cartService.getBasket().length;
   constructor(
     private router: Router,
-    
+ 
     private categoryService: CategoryService,
+    private cartService: CartService
    
   ) { }
   ngOnInit(): void{

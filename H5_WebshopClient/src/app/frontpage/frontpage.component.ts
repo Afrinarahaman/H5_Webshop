@@ -11,7 +11,7 @@ import { ProductService } from '../_services/product.service';
 })
 export class FrontpageComponent implements OnInit {
 
-  product: Product = { productId: 0, title: "", price: 0, description: "", image: "", stock: 0, categoryId: 0 }
+  product: Product = { id: 0, title: "", price: 0, description: "", image: "", stock: 0, categoryId: 0 }
   products: Product[] = [];
   productId: number = 0;
   searchKey: string = "";

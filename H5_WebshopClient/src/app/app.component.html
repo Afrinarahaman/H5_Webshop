@@ -7,7 +7,7 @@
   <li><a routerLink="/" routerLinkActive="active-link w3-green" [routerLinkActiveOptions]="{exact:true}">Home</a>
   </li>
   <li class="nav-item" *ngFor="let category of categories ">
-    <a routerLinkActive="active-link w3-green" routerLink="/category-products/{{category.categoryId}}">{{category.categoryName}}</a>
+    <a routerLinkActive="active-link w3-green" routerLink="/category_products/{{category.id}}">{{category.categoryName}}</a>
     
 </li>
 <a class="navbar-brand" href="#"> <img src="assets/image/Chicbotique_logo.jpg"></a>
@@ -18,17 +18,16 @@
 <li>
 <a routerLinkActive="active-link w3-green" >Register</a>
 </li>
-
+<button routerLink="/cart" class="btn btn-primary">
+  <i style="font-size:25px" class="fas fa-cart-plus"></i>
+  <div style="font-size: 10px;" class="badge bg-warning"> {{totalItem}}</div>
+</button>
 </ul>
 
 </div>
 </nav>
 
-<div  class="bg-image">
-  
 
-
-</div>
 
 
 
