@@ -47,6 +47,7 @@ namespace H5_Webshop.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetById([FromRoute] int productId)
         {
+
             try
             {
                 ProductResponse productResponse = await _productService.GetProductById(productId);
