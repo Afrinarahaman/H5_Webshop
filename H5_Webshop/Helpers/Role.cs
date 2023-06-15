@@ -2,9 +2,10 @@
 {
     public enum Role
     {
-    
+        /*Our user is memebr og guest*/
         Administrator = 0,
-        Customer = 1
+        Member = 1,
+        Guest = 2
     }
 
 

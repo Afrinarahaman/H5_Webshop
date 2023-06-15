@@ -8,6 +8,8 @@ namespace H5_Webshop.Database
 {
     public class WebshopApiContext:DbContext
     {
+     
+
         public WebshopApiContext() { }
         public WebshopApiContext(DbContextOptions<WebshopApiContext> options) : base(options) { }
 
@@ -96,25 +98,41 @@ namespace H5_Webshop.Database
             modelBuilder.Entity<User>().HasData(
                new()
                {
-                   Id = 1,
+                   UserId = 1,
                    FirstName = "Peter",
-                   MiddleName = "Per.",
+              
                    LastName = "Aksten",
                    Email = "peter@abc.com",
+                   Address="husum",
+                   Telephone="+4512345678",
                    Password = "password",
                    Role = Role.Administrator
                },
                new()
                {
-                   Id = 2,
+                   UserId = 2,
                    FirstName = "Rizwanah",
-                   MiddleName = "R.R",
+                  
                    LastName = "Mustafa",
+                   Address = "husum",
+                   Telephone = "+4512345678",
                    Email = "riz@abc.com",
                    Password = "password",
-                   Role = Role.Customer
-               }
-               );
+                   Role = Role.Member
+               },
+            new()
+            {
+                UserId = 3,
+                FirstName = "Afrina",
+
+                LastName = "Rahaman",
+                Address = "husum",
+                Telephone = "+4512345678",
+                Email = "afr@abc.com",
+                Password = "No Need",
+                Role = Role.Guest
+            }
+            );
 
 
 

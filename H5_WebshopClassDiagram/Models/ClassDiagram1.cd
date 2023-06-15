@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Comment CommentText="HAS">
+  <Comment CommentText="Has">
     <Position X="5.175" Y="1.392" Height="0.291" Width="0.7" />
   </Comment>
   <Comment CommentText="Makes">
     <Position X="6.608" Y="3.758" Height="0.291" Width="0.7" />
   </Comment>
-  <Comment CommentText="belongs to">
+  <Comment CommentText="Belong to">
     <Position X="8.042" Y="1.225" Height="0.416" Width="0.967" />
   </Comment>
   <Class Name="H5_Webshop.DTOs.Entities.Category">

@@ -21,6 +21,81 @@ namespace H5_Webshop.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("H5_Webshop.Database.Entities.User", b =>
+                {
+                    b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(32)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(32)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(32)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(32)");
+
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Telephone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(32)");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("User");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            Address = "husum",
+                            Email = "peter@abc.com",
+                            FirstName = "Peter",
+                            LastName = "Aksten",
+                            Password = "password",
+                            Role = 0,
+                            Telephone = "+4512345678"
+                        },
+                        new
+                        {
+                            UserId = 2,
+                            Address = "husum",
+                            Email = "riz@abc.com",
+                            FirstName = "Rizwanah",
+                            LastName = "Mustafa",
+                            Password = "password",
+                            Role = 1,
+                            Telephone = "+4512345678"
+                        },
+                        new
+                        {
+                            UserId = 3,
+                            Address = "husum",
+                            Email = "afr@abc.com",
+                            FirstName = "Afrina",
+                            LastName = "Rahaman",
+                            Password = "password",
+                            Role = 2,
+                            Telephone = "+4512345678"
+                        });
+                });
+
             modelBuilder.Entity("H5_Webshop.DTOs.Entities.Category", b =>
                 {
                     b.Property<int>("CategoryId")

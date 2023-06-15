@@ -70,6 +70,8 @@ namespace H5_Webshop.Repositories
               
                 updateUser.LastName = user.LastName;
                 updateUser.Password = user.Password;
+                updateUser.Address = user.Address;
+                updateUser.Telephone = user.Telephone;
                 updateUser.Role = user.Role;
                 await _context.SaveChangesAsync();
             }
@@ -77,10 +79,10 @@ namespace H5_Webshop.Repositories
         }
 
         //This method will remove all the details of one user by userID
-        public async Task<User> Delete(int userId)
+        public async Task<User> Delete(int user_Id)
         {
             User deleteuser = await _context.User
-                .FirstOrDefaultAsync(u => u.Id == userId);
+                .FirstOrDefaultAsync(u => u.UserId == user_Id);
 
             if (deleteuser != null)
             {

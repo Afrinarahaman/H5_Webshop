@@ -22,6 +22,25 @@ namespace H5_Webshop.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "User",
+                columns: table => new
+                {
+                    UserId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FirstName = table.Column<string>(type: "nvarchar(32)", nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(32)", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(32)", nullable: false),
+                    Telephone = table.Column<string>(type: "nvarchar(32)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(128)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(32)", nullable: false),
+                    Role = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_User", x => x.UserId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Product",
                 columns: table => new
                 {
@@ -48,12 +67,21 @@ namespace H5_Webshop.Migrations
             migrationBuilder.InsertData(
                 table: "Category",
                 columns: new[] { "CategoryId", "CategoryName" },
-                values: new object[] { 1, "Kids" });
+                values: new object[,]
+                {
+                    { 1, "Kids" },
+                    { 2, "Men" }
+                });
 
             migrationBuilder.InsertData(
-                table: "Category",
-                columns: new[] { "CategoryId", "CategoryName" },
-                values: new object[] { 2, "Men" });
+                table: "User",
+                columns: new[] { "UserId", "Address", "Email", "FirstName", "LastName", "Password", "Role", "Telephone" },
+                values: new object[,]
+                {
+                    { 1, "husum", "peter@abc.com", "Peter", "Aksten", "password", 0, "+4512345678" },
+                    { 2, "husum", "riz@abc.com", "Rizwanah", "Mustafa", "password", 1, "+4512345678" },
+                    { 3, "husum", "afr@abc.com", "Afrina", "Rahaman", "password", 2, "+4512345678" }
+                });
 
             migrationBuilder.InsertData(
                 table: "Product",
@@ -77,6 +105,9 @@ namespace H5_Webshop.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Product");
+
+            migrationBuilder.DropTable(
+                name: "User");
 
             migrationBuilder.DropTable(
                 name: "Category");
