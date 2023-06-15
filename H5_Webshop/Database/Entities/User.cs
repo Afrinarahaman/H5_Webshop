@@ -1,10 +1,12 @@
-﻿
+﻿using H5_Webshop.Helpers;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data;
 
 namespace H5_Webshop.Database.Entities
 {
-    public class Users 
+    public class User
     {
 
         [Key]
@@ -30,11 +32,5 @@ namespace H5_Webshop.Database.Entities
 
         // Role er en enum datatype, der består af integrerede konstanter. Her bruges vi enum for at sætter role(Admin eller Kunder)
         public Role Role { get; set; }
-    }
-
-    public enum Role
-    {
-        Administrator = 0,
-        Customer = 1
     }
 }

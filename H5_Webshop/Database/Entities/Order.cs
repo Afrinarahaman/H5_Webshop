@@ -15,7 +15,7 @@ namespace H5_Webshop.Database.Entities
         public int UserId { get; set; }
 
         [ForeignKey("UserId")]
-        public Users User { get; set; }
+        public User User { get; set; }
         public List<OrderDetails> OrderDetails { get; set; } = new();
     }
 }

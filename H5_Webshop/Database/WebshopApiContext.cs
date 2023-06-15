@@ -1,5 +1,7 @@
 ﻿using Castle.Core.Resource;
+using H5_Webshop.Database.Entities;
 using H5_Webshop.DTOs.Entities;
+using H5_Webshop.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 namespace H5_Webshop.Database
@@ -11,6 +13,7 @@ namespace H5_Webshop.Database
 
         public DbSet<Product> Product { get; set; }
         public DbSet<Category> Category { get; set; }
+        public DbSet<User> User { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -90,7 +93,28 @@ namespace H5_Webshop.Database
                 }
               );
 
-
+            modelBuilder.Entity<User>().HasData(
+               new()
+               {
+                   Id = 1,
+                   FirstName = "Peter",
+                   MiddleName = "Per.",
+                   LastName = "Aksten",
+                   Email = "peter@abc.com",
+                   Password = "password",
+                   Role = Role.Administrator
+               },
+               new()
+               {
+                   Id = 2,
+                   FirstName = "Rizwanah",
+                   MiddleName = "R.R",
+                   LastName = "Mustafa",
+                   Email = "riz@abc.com",
+                   Password = "password",
+                   Role = Role.Customer
+               }
+               );
 
 
 
