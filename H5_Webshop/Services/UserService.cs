@@ -206,7 +206,7 @@ namespace H5_Webshop.Services
                 Telephone = gstUser.Telephone,
                 Email = gstUser.Email,
                 Password = "No Need",
-                Role = Helpers.Role.Member// force all users created through Register, to Role.User
+                Role = Helpers.Role.Guest// force all users created through Register, to Role.User
             };
 
             user = await _userRepository.Create(user);

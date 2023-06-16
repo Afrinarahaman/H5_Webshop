@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../_models/user';
 import { UserService } from '../_services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-guest',
@@ -19,6 +20,7 @@ export class GuestComponent implements OnInit {
 
   constructor(
     private userService: UserService,
+    private router: Router
    
   ) { }
 
@@ -48,7 +50,7 @@ export class GuestComponent implements OnInit {
     }
     
     if (this.user.firstName == '') {
-      this.message.push('Enter Username');
+      this.message.push('Enter Firstname');
     }
     if (this.user.lastName == '') {
       this.message.push('Enter Lastname');
@@ -62,12 +64,12 @@ export class GuestComponent implements OnInit {
   
     if (this.message.length == 0) {
       if (this.user.id == 0) {
-        this.userService.addUser(this.user)
+        this.userService.guest_register(this.user)
           .subscribe({
             next: (a: any) => {
             this.users.push(a)
-            this.user = this.newUser();
-            alert('Thanks for Signing Up!');
+            this.router.navigate(['/']);
+            alert('Thanks for giving information!');
            },
            error: (err: any)=>{
                         alert("User already exists!");
