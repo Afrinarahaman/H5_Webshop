@@ -9,12 +9,12 @@ namespace H5_Webshop.Repositories
         public interface ICategoryRepository
         {
             Task<List<Category>> SelectAllCategories();
-            Task<Category> SelectCategoryById(int categoryId);
+            Task<Category> SelectCategoryById(int category_Id);
             Task<List<Category>> SelectAllCategoriesWithoutProducts();
             // Task<List<Category>> SelectCategoriesByProductId(int productId);
             Task<Category> InsertNewCategory(Category category);
-            Task<Category> UpdateExistingCategory(int categoryId, Category category);
-            Task<Category> DeleteCategoryById(int categoryId);
+            Task<Category> UpdateExistingCategory(int category_Id, Category category);
+            Task<Category> DeleteCategoryById(int category_Id);
 
         }
         public class CategoryRepository: ICategoryRepository
@@ -32,11 +32,11 @@ namespace H5_Webshop.Repositories
 
                     .ToListAsync();
             }
-            public async Task<Category> SelectCategoryById(int categoryId)
+            public async Task<Category> SelectCategoryById(int category_Id)
             {
                 return await _context.Category
                     .Include(a => a.Products)
-                    .FirstOrDefaultAsync(category => category.Id == categoryId);
+                    .FirstOrDefaultAsync(category => category.CategoryId == category_Id);
             }
 
             public async Task<List<Category>> SelectAllCategoriesWithoutProducts()
@@ -51,9 +51,9 @@ namespace H5_Webshop.Repositories
                 await _context.SaveChangesAsync();
                 return category;
             }
-            public async Task<Category> UpdateExistingCategory(int categoryId, Category category)
+            public async Task<Category> UpdateExistingCategory(int category_Id, Category category)
             {
-                Category updateCategory = await _context.Category.FirstOrDefaultAsync(category => category.Id == categoryId);
+                Category updateCategory = await _context.Category.FirstOrDefaultAsync(category => category.CategoryId == category_Id);
                 if (updateCategory != null)
                 {
                     updateCategory.CategoryName = category.CategoryName;
@@ -62,9 +62,9 @@ namespace H5_Webshop.Repositories
                 }
                 return updateCategory;
             }
-            public async Task<Category> DeleteCategoryById(int categoryId)
+            public async Task<Category> DeleteCategoryById(int category_Id)
             {
-                Category deleteCategory = await _context.Category.FirstOrDefaultAsync(category => category.Id == categoryId);
+                Category deleteCategory = await _context.Category.FirstOrDefaultAsync(category => category.CategoryId == category_Id);
                 if (deleteCategory != null)
                 {
 

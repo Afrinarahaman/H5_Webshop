@@ -7,7 +7,7 @@ namespace H5_Webshop.DTOs.Entities
     public class Product
     {
         [Key]
-        public int Id { get; set; }
+        public int ProductId { get; set; }
 
         [Column(TypeName = "nvarchar(32)")]
         public string Title { get; set; }

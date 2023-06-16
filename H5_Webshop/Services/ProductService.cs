@@ -98,7 +98,7 @@ namespace H5_Webshop.Services
 
             return new ProductResponse
             {
-                Id = product.Id,
+                Id = product.ProductId,
                 Title=product.Title,
                 Price=product.Price,
                 Description=product.Description,
@@ -108,7 +108,7 @@ namespace H5_Webshop.Services
 
                 Category = new ProductCategoryResponse
                 {
-                    Id = product.Category.Id,
+                    Id = product.Category.CategoryId,
                     CategoryName = product.Category.CategoryName
 
                 }

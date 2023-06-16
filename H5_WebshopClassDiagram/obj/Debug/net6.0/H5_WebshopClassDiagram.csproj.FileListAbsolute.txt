@@ -1,0 +1,12 @@
+C:\Users\moner\source\repos\H5_Webshop\H5_WebshopClassDiagram\obj\Debug\net6.0\H5_WebshopClassDiagram.csproj.AssemblyReference.cache
+C:\Users\moner\source\repos\H5_Webshop\H5_WebshopClassDiagram\obj\Debug\net6.0\H5_WebshopClassDiagram.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\moner\source\repos\H5_Webshop\H5_WebshopClassDiagram\obj\Debug\net6.0\H5_WebshopClassDiagram.AssemblyInfoInputs.cache
+C:\Users\moner\source\repos\H5_Webshop\H5_WebshopClassDiagram\obj\Debug\net6.0\H5_WebshopClassDiagram.AssemblyInfo.cs
+C:\Users\moner\source\repos\H5_Webshop\H5_WebshopClassDiagram\obj\Debug\net6.0\H5_WebshopClassDiagram.csproj.CoreCompileInputs.cache
+C:\Users\moner\source\repos\H5_Webshop\H5_WebshopClassDiagram\bin\Debug\net6.0\H5_WebshopClassDiagram.deps.json
+C:\Users\moner\source\repos\H5_Webshop\H5_WebshopClassDiagram\bin\Debug\net6.0\H5_WebshopClassDiagram.dll
+C:\Users\moner\source\repos\H5_Webshop\H5_WebshopClassDiagram\bin\Debug\net6.0\H5_WebshopClassDiagram.pdb
+C:\Users\moner\source\repos\H5_Webshop\H5_WebshopClassDiagram\obj\Debug\net6.0\H5_WebshopClassDiagram.dll
+C:\Users\moner\source\repos\H5_Webshop\H5_WebshopClassDiagram\obj\Debug\net6.0\refint\H5_WebshopClassDiagram.dll
+C:\Users\moner\source\repos\H5_Webshop\H5_WebshopClassDiagram\obj\Debug\net6.0\H5_WebshopClassDiagram.pdb
+C:\Users\moner\source\repos\H5_Webshop\H5_WebshopClassDiagram\obj\Debug\net6.0\ref\H5_WebshopClassDiagram.dll

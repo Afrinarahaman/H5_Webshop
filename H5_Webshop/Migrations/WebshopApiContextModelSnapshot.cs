@@ -21,42 +21,116 @@ namespace H5_Webshop.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("H5_Webshop.DTOs.Entities.Category", b =>
+            modelBuilder.Entity("H5_Webshop.Database.Entities.User", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(32)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(32)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(32)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(32)");
+
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Telephone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(32)");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("User");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            Address = "husum",
+                            Email = "peter@abc.com",
+                            FirstName = "Peter",
+                            LastName = "Aksten",
+                            Password = "password",
+                            Role = 0,
+                            Telephone = "+4512345678"
+                        },
+                        new
+                        {
+                            UserId = 2,
+                            Address = "husum",
+                            Email = "riz@abc.com",
+                            FirstName = "Rizwanah",
+                            LastName = "Mustafa",
+                            Password = "password",
+                            Role = 1,
+                            Telephone = "+4512345678"
+                        },
+                        new
+                        {
+                            UserId = 3,
+                            Address = "husum",
+                            Email = "afr@abc.com",
+                            FirstName = "Afrina",
+                            LastName = "Rahaman",
+                            Password = "password",
+                            Role = 2,
+                            Telephone = "+4512345678"
+                        });
+                });
+
+            modelBuilder.Entity("H5_Webshop.DTOs.Entities.Category", b =>
+                {
+                    b.Property<int>("CategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"), 1L, 1);
 
                     b.Property<string>("CategoryName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(20)");
 
-                    b.HasKey("Id");
+                    b.HasKey("CategoryId");
 
                     b.ToTable("Category");
 
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            CategoryId = 1,
                             CategoryName = "Kids"
                         },
                         new
                         {
-                            Id = 2,
+                            CategoryId = 2,
                             CategoryName = "Men"
                         });
                 });
 
             modelBuilder.Entity("H5_Webshop.DTOs.Entities.Product", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"), 1L, 1);
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
@@ -79,7 +153,7 @@ namespace H5_Webshop.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(32)");
 
-                    b.HasKey("Id");
+                    b.HasKey("ProductId");
 
                     b.HasIndex("CategoryId");
 
@@ -88,7 +162,7 @@ namespace H5_Webshop.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            ProductId = 1,
                             CategoryId = 1,
                             Description = "kids dress",
                             Image = "dress1.jpg",
@@ -98,7 +172,7 @@ namespace H5_Webshop.Migrations
                         },
                         new
                         {
-                            Id = 2,
+                            ProductId = 2,
                             CategoryId = 2,
                             Description = "T-Shirt for nen",
                             Image = "BlueTShirt.jpg",
@@ -108,7 +182,7 @@ namespace H5_Webshop.Migrations
                         },
                         new
                         {
-                            Id = 3,
+                            ProductId = 3,
                             CategoryId = 1,
                             Description = "Girls skirt",
                             Image = "skirt1.jpg",
@@ -118,7 +192,7 @@ namespace H5_Webshop.Migrations
                         },
                         new
                         {
-                            Id = 4,
+                            ProductId = 4,
                             CategoryId = 1,
                             Description = "kids jumpersuit",
                             Image = "jumpersuit1.jpg",
@@ -128,7 +202,7 @@ namespace H5_Webshop.Migrations
                         },
                         new
                         {
-                            Id = 5,
+                            ProductId = 5,
                             CategoryId = 2,
                             Description = "T-Shirt for men",
                             Image = "RedT-Shirt.jpg",

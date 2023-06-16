@@ -1,16 +1,21 @@
 ﻿using Castle.Core.Resource;
+using H5_Webshop.Database.Entities;
 using H5_Webshop.DTOs.Entities;
+using H5_Webshop.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 namespace H5_Webshop.Database
 {
     public class WebshopApiContext:DbContext
     {
+     
+
         public WebshopApiContext() { }
         public WebshopApiContext(DbContextOptions<WebshopApiContext> options) : base(options) { }
 
         public DbSet<Product> Product { get; set; }
         public DbSet<Category> Category { get; set; }
+        public DbSet<User> User { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -19,21 +24,21 @@ namespace H5_Webshop.Database
             modelBuilder.Entity<Category>().HasData(
                new()
                {
-                   Id = 1,
+                   CategoryId = 1,
                    CategoryName = "Kids"
 
 
                },
                new()
                {
-                   Id = 2,
+                   CategoryId = 2,
                    CategoryName = "Men"
                }
                );
             modelBuilder.Entity<Product>().HasData(
                 new()
                 {
-                    Id = 1,
+                    ProductId = 1,
                     Title = " Fency dress",
                     Price = 299.99M,
                     Description = "kids dress",
@@ -45,7 +50,7 @@ namespace H5_Webshop.Database
 
                 new()
                 {
-                    Id = 2,
+                    ProductId = 2,
                     Title = "Blue T-Shirt",
                     Price = 199.99M,
                     Description = "T-Shirt for nen",
@@ -57,7 +62,7 @@ namespace H5_Webshop.Database
 
                 new()
                 {
-                    Id = 3,
+                    ProductId = 3,
                     Title = " Skirt",
                     Price = 159.99M,
                     Description = "Girls skirt",
@@ -68,7 +73,7 @@ namespace H5_Webshop.Database
                 },
                 new()
                 {
-                    Id = 4,
+                    ProductId = 4,
                     Title = " Jumpersuit",
                     Price = 279.99M,
                     Description = "kids jumpersuit",
@@ -79,7 +84,7 @@ namespace H5_Webshop.Database
                 },
                 new()
                 {
-                    Id = 5,
+                    ProductId = 5,
                     Title = "Red T-Shirt",
                     Price = 199.99M,
                     Description = "T-Shirt for men",
@@ -90,7 +95,44 @@ namespace H5_Webshop.Database
                 }
               );
 
+            modelBuilder.Entity<User>().HasData(
+               new()
+               {
+                   UserId = 1,
+                   FirstName = "Peter",
+              
+                   LastName = "Aksten",
+                   Email = "peter@abc.com",
+                   Address="husum",
+                   Telephone="+4512345678",
+                   Password = "password",
+                   Role = Role.Administrator
+               },
+               new()
+               {
+                   UserId = 2,
+                   FirstName = "Rizwanah",
+                  
+                   LastName = "Mustafa",
+                   Address = "husum",
+                   Telephone = "+4512345678",
+                   Email = "riz@abc.com",
+                   Password = "password",
+                   Role = Role.Member
+               },
+            new()
+            {
+                UserId = 3,
+                FirstName = "Afrina",
 
+                LastName = "Rahaman",
+                Address = "husum",
+                Telephone = "+4512345678",
+                Email = "afr@abc.com",
+                Password = "No Need",
+                Role = Role.Guest
+            }
+            );
 
 
 

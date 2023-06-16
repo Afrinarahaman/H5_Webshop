@@ -7,10 +7,10 @@ namespace H5_Webshop.DTOs.Entities
     public class Category
     {
         [Key]
-        public int Id { get; set; }
+        public int CategoryId { get; set; }
 
         [Column(TypeName = "nvarchar(20)")]
-        public string CategoryName { get; set; }
+        public string? CategoryName { get; set; }
 
 
         public List<Product> Products { get; set; } = new();

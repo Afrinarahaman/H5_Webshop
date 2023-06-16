@@ -47,6 +47,7 @@ namespace H5_Webshop.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetById([FromRoute] int productId)
         {
+
             try
             {
                 ProductResponse productResponse = await _productService.GetProductById(productId);
@@ -152,11 +153,11 @@ namespace H5_Webshop.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Delete([FromRoute] int productId)
+        public async Task<IActionResult> Delete([FromRoute] int product_Id)
         {
             try
             {
-                ProductResponse productResponse = await _productService.DeleteProduct(productId);
+                ProductResponse productResponse = await _productService.DeleteProduct(product_Id);
 
                 if (productResponse == null)
                 {
