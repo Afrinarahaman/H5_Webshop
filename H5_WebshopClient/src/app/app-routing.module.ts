@@ -7,6 +7,7 @@ import { CartComponent } from './cart/cart.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { GuestComponent } from './guest/guest.component';
+import { ChooseOptionComponent } from './choose-option/choose-option.component';
 
 const routes: Routes = [
   { path: '', component: FrontpageComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'guest', component: GuestComponent },
+  { path: 'choose_option', component: ChooseOptionComponent }
 
 ];
 

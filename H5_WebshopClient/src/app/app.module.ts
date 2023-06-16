@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 import { GuestComponent } from './guest/guest.component';
+import { ChooseOptionComponent } from './choose-option/choose-option.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { GuestComponent } from './guest/guest.component';
     CartComponent,
     LoginComponent,
     RegisterComponent,
-    GuestComponent
+    GuestComponent,
+    ChooseOptionComponent
   ],
   imports: [
     BrowserModule,

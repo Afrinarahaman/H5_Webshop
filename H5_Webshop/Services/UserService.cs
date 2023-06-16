@@ -63,7 +63,6 @@ namespace H5_Webshop.Services
             {
 
                 FirstName = newuser.FirstName,
-                
                 LastName = newuser.LastName,
                 Address = newuser.Address,
                 Telephone = newuser.Telephone,
@@ -104,9 +103,8 @@ namespace H5_Webshop.Services
                 {
                     Id = user.UserId,
                     Email = user.Email,
-                    FirstName = user.FirstName,
-             
                     Password = user.Password,
+                    FirstName = user.FirstName,
                     Role = user.Role,
                     Token = _jwtUtils.GenerateJwtToken(user)
                 };

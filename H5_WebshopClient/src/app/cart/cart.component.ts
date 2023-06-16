@@ -26,18 +26,14 @@ export class CartComponent implements OnInit {
     // let customerId=parseInt(this.authService.currentCustomerValue.id)
  
 
-    if(this.guest)
-      {
-      alert("Do you want to buy products as guest? If yes, then fill up the infrmation, ellers..");
-      this.router.navigate(['guest']);
+    this.router.navigate(['choose_option']);
+  
+      /*if (this.authService.currentUserValue == null || this.authService.currentUserValue.id == 0) {
+        
+        this.router.navigate(['choose_option']);
       }
-    if (this.authService.currentUserValue == null || this.authService.currentUserValue.id == 0) {
-      
-      else if
+    
 
-      alert("Do you have any account? If yes, then Login, otherwise create a new account..");
-      this.router.navigate(['login']);
-    }
     else {
 
 
@@ -47,7 +43,7 @@ export class CartComponent implements OnInit {
            this.router.navigate(['/thankyou/'+result.id]);
            
 
-    }
+    }*/
 
       }
   public basket = this.cartService.basket;
