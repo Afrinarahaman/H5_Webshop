@@ -12,7 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 import { GuestComponent } from './guest/guest.component';
-import { ChooseOptionComponent } from './choose-option/choose-option.component';
+import { CheckOutComponent } from './check-out/check-out.component';
+
 
 @NgModule({
   declarations: [
@@ -23,8 +24,8 @@ import { ChooseOptionComponent } from './choose-option/choose-option.component';
     CartComponent,
     LoginComponent,
     RegisterComponent,
-    GuestComponent,
-    ChooseOptionComponent
+    GuestComponent, 
+    CheckOutComponent  
   ],
   imports: [
     BrowserModule,

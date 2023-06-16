@@ -15,7 +15,7 @@ export class CartComponent implements OnInit {
 
   public grandTotal: number = 0;
   public cartProducts: CartItem[] = [];  //property
-  public guest: Role.Guest | undefined;
+ 
   constructor(private cartService: CartService, private router: Router,private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -25,9 +25,17 @@ export class CartComponent implements OnInit {
   async createOrder() {
     // let customerId=parseInt(this.authService.currentCustomerValue.id)
  
-
+    if (this.authService.currentUserValue == null || this.authService.currentUserValue.id == 0) {
     this.router.navigate(['choose_option']);
-  
+    }
+    else
+    {
+      
+      var result = await this.cartService.addOrder();
+      console.log('result', result);
+             this.cartService.clearBasket();    
+           this.router.navigate(['/thankyou/'+result.id]);
+    }
       /*if (this.authService.currentUserValue == null || this.authService.currentUserValue.id == 0) {
         
         this.router.navigate(['choose_option']);
