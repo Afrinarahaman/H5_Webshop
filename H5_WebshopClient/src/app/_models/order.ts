@@ -2,7 +2,7 @@ import { CartItem } from "./cartItem";
 
 export interface Order {
     id?: number;
-    customerId: number;
+    userId: number;
     orderDetails: CartItem[];
     orderDate?: Date;
 }

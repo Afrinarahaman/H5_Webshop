@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, firstValueFrom } from 'rxjs';
 import { CartItem } from '../_models/cartItem';
+import { AuthService } from './auth.service';
+import { Order } from '../_models/order';
+import { OrderService } from './order.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +15,7 @@ export class CartService {
   public basket: CartItem[] = [];
   public search = new BehaviorSubject<string>("");
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private orderService: OrderService, private authService: AuthService) { }
 
   getBasket(): CartItem[] {
     this.basket = JSON.parse(localStorage.getItem(this.basketName) || "[]");
@@ -44,7 +47,31 @@ export class CartService {
   
 
   async addOrder(): Promise<any> {
-   
+    // console.log(localStorage'.getItem("customerId"));
+
+
+    if (this.authService.currentUserValue.id != null && this.authService.currentUserValue.id > 0) {
+
+
+
+      let orderitem: Order = {           // this is an object which stores customer_id, all of the ordereditems details and date when these have been ordered
+        userId: this.authService.currentUserValue.id,
+        orderDetails: this.basket,
+
+      }
+      var result = await firstValueFrom(this.orderService.storeOrder(orderitem));
+      return result;
+      //calling storeCartItem function for storing all of the ordereditems deatils into the database. 
+      // this.orderService.storeOrder(orderitem);//.subscribe(x => console.log(x));  //calling storeCartItem function for storing all of the ordereditems deatils into the database. 
+    } else {
+      return null;
+    }
+    // else {
+    //   console.log('null');
+    //   return new BehaviorSubject<Order>({ customerId: 0, orderDetails: [] } as Order);
+
+    // }
+
   }
   clearBasket(): CartItem[] {
     this.getBasket();

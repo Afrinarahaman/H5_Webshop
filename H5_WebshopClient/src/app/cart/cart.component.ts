@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CartItem } from '../_models/cartItem';
 import { CartService } from '../_services/cart.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../_services/auth.service';
+import { Role } from '../_models/role';
 
 @Component({
   selector: 'app-cart',
@@ -13,8 +15,8 @@ export class CartComponent implements OnInit {
 
   public grandTotal: number = 0;
   public cartProducts: CartItem[] = [];  //property
-
-  constructor(private cartService: CartService, private router: Router) { }
+  public guest: Role.Guest | undefined;
+  constructor(private cartService: CartService, private router: Router,private authService: AuthService) { }
 
   ngOnInit(): void {
     this.cartProducts = this.cartService.getBasket();
@@ -24,12 +26,28 @@ export class CartComponent implements OnInit {
     // let customerId=parseInt(this.authService.currentCustomerValue.id)
  
 
+    if(this.guest)
+      {
+      alert("Do you want to buy products as guest? If yes, then fill up the infrmation, ellers..");
+      this.router.navigate(['guest']);
+      }
+    if (this.authService.currentUserValue == null || this.authService.currentUserValue.id == 0) {
+      
+      else if
+
+      alert("Do you have any account? If yes, then Login, otherwise create a new account..");
+      this.router.navigate(['login']);
+    }
+    else {
+
 
       var result = await this.cartService.addOrder();
       console.log('result', result);
              this.cartService.clearBasket();    
            this.router.navigate(['/thankyou/'+result.id]);
            
+
+    }
 
       }
   public basket = this.cartService.basket;

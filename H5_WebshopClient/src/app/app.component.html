@@ -11,12 +11,15 @@
     
 </li>
 <a class="navbar-brand" href="#"> <img src="assets/image/Chicbotique_logo.jpg"></a>
-<li>
-  <a routerLinkActive="active-link w3-green" >Login</a>
-    
+<li class="nav-item">
+  <a routerLink="/register" routerLinkActive="active-link w3-green" *ngIf="currentUser == null">Register</a>
 </li>
-<li>
-<a routerLinkActive="active-link w3-green" >Register</a>
+<li style="display:inline-block" *ngIf="currentUser != null" class="nav-item">
+  <a routerLink="/" (click)="logout()">Logout</a>
+</li>
+
+<li class="nav-item">
+  <a routerLink="/profile" routerLinkActive="active-link w3-green" *ngIf="currentUser == null">Login</a>
 </li>
 <div class="form-group">
   <input type="text" class="form-control"  placeholder="productTitle">
