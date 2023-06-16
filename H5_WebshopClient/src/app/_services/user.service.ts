@@ -11,6 +11,7 @@ export class UserService {
 
   apiUrl = environment.apiUrl + '/User';
   apiUrl1 = environment.apiUrl + '/User/register';
+  apiUrl2 = environment.apiUrl + '/User/guestRegister';
 
 
   httpOptions = {
@@ -26,6 +27,9 @@ export class UserService {
   }
   addUser(user: User): Observable<User> {
     return this.http.post<User>(this.apiUrl1, user, this.httpOptions);
+  }
+  guest_register(guestUser: User): Observable<User>{
+    return this.http.post<User>(this.apiUrl2, guestUser, this.httpOptions);
   }
 
   updateUser(userId: number, user: User): Observable<User> {
