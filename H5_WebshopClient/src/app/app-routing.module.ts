@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'guest', component: GuestComponent },
   { path: 'checkOut', component: CheckOutComponent },
-  { path: 'checkOut', component:ThankyouComponent}
+  { path: 'thankyou', component:ThankyouComponent}
 
 ];
 
