@@ -26,7 +26,7 @@ export class CartComponent implements OnInit {
     // let customerId=parseInt(this.authService.currentCustomerValue.id)
  
     if (this.authService.currentUserValue == null || this.authService.currentUserValue.id == 0) {
-    this.router.navigate(['choose_option']);
+    this.router.navigate(['checkOut']);
     }
     else
     {
