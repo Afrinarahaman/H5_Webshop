@@ -13,6 +13,7 @@ import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 import { GuestComponent } from './guest/guest.component';
 import { CheckOutComponent } from './check-out/check-out.component';
+import { ThankyouComponent } from './thankyou/thankyou.component';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { CheckOutComponent } from './check-out/check-out.component';
     LoginComponent,
     RegisterComponent,
     GuestComponent, 
-    CheckOutComponent  
+    CheckOutComponent, ThankyouComponent  
   ],
   imports: [
     BrowserModule,

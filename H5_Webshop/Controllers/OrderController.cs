@@ -82,7 +82,7 @@ namespace H5_Webshop.Controllers
         {
             try
             {
-                List<OrderResponse> orderResponse = await _orderService.GetOrdersByCustomerId(customerId);
+                List<OrderResponse> orderResponse = await _orderService.GetOrdersByUserId(customerId);
                 if (orderResponse == null)
                 {
                     return Problem("Got no data, not even an empty list, this is unexpected");
