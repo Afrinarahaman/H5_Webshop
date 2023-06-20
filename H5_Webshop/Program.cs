@@ -20,6 +20,8 @@ public class Program
 
         builder.Services.AddTransient<IUserRepository, UserRepository>();
         builder.Services.AddTransient<IUserService, UserService>();
+        builder.Services.AddTransient<IOrderService, OrderService>();
+        builder.Services.AddTransient<IOrderRepository, OrderRepository>();
 
         // Add services to the container.
         builder.Services.AddDbContext<WebshopApiContext>(

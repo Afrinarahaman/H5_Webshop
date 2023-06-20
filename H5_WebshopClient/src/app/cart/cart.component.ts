@@ -34,7 +34,7 @@ export class CartComponent implements OnInit {
       var result = await this.cartService.addOrder();
       console.log('result', result);
              this.cartService.clearBasket();    
-           this.router.navigate(['/thankyou/'+result.id]);
+           this.router.navigate(['/thankyou/']);
     }
       /*if (this.authService.currentUserValue == null || this.authService.currentUserValue.id == 0) {
         

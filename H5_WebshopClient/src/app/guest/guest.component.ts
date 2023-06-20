@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../_models/user';
 import { UserService } from '../_services/user.service';
 import { Router } from '@angular/router';
+import { CartService } from '../_services/cart.service';
 
 @Component({
   selector: 'app-guest',
@@ -20,7 +21,8 @@ export class GuestComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private cartService:CartService
    
   ) { }
 
@@ -42,7 +44,7 @@ export class GuestComponent implements OnInit {
     this.user = this.newUser();
   }
 
-  save(): void {
+   save(): void {
     this.message = [];
 
     if (this.user.email == '') {
@@ -66,10 +68,14 @@ export class GuestComponent implements OnInit {
       if (this.user.id == 0) {
         this.userService.guest_register(this.user)
           .subscribe({
-            next: (a: any) => {
-            this.users.push(a)
-            this.router.navigate(['/']);
-            alert('Thanks for giving information!');
+            next: async (a: User) => {
+            this.users.push(a);
+            sessionStorage.setItem('guestuserName', a.firstName.toString());
+            var result = await this.cartService.addOrder();
+            this.cartService.clearBasket(); 
+            alert('Thanks for giving information and choosing us!'); 
+            this.router.navigate(['/thankyou/']);
+           
            },
            error: (err: any)=>{
                         alert("User already exists!");

@@ -10,6 +10,7 @@ namespace H5_Webshop.Services
         Task<List<UserResponse>> GetAll();
         // Task<List<UserResponse>> GetAdmins();
         Task<UserResponse> GetById(int UserId);
+        Task<UserResponse> GetIdByUserName(string user_Name);
         Task<LoginResponse> Authenticate(LoginRequest login);
         Task<UserResponse> Register(UserRequest newUser);
         Task<GuestResponse> Register_Guest(GuestRequest newUser);
@@ -84,6 +85,17 @@ namespace H5_Webshop.Services
             {
 
                 return MapUserToUserResponse(User);
+            }
+            return null;
+        }
+        public async Task<UserResponse> GetIdByUserName(string user_Name)
+        {
+            User User = await _userRepository.GetIdByUserName(user_Name);
+
+            if (User != null)
+            {
+
+                return MapUserToUserResponse(User); 
             }
             return null;
         }
@@ -213,6 +225,8 @@ namespace H5_Webshop.Services
 
             return MapGuestToGuestResponse(user);
         }
+
+       
     }
     
 }

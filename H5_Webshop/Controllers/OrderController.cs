@@ -73,16 +73,16 @@ namespace H5_Webshop.Controllers
         }
         // https://localhost:5001/api/Product/derp
 
-        [HttpGet("Customer/{customerId}")]
+        [HttpGet("User/{userId}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetOrdersByCustomerId([FromRoute] int customerId)
+        public async Task<IActionResult> GetOrdersByCustomerId([FromRoute] int user_Id)
         {
             try
             {
-                List<OrderResponse> orderResponse = await _orderService.GetOrdersByUserId(customerId);
+                List<OrderResponse> orderResponse = await _orderService.GetOrdersByUserId(user_Id);
                 if (orderResponse == null)
                 {
                     return Problem("Got no data, not even an empty list, this is unexpected");

@@ -31,7 +31,9 @@ export class UserService {
   guest_register(guestUser: User): Observable<User>{
     return this.http.post<User>(this.apiUrl2, guestUser, this.httpOptions);
   }
-
+  getUserbyUserName(userName:string):Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/${userName}`);;
+  }
   updateUser(userId: number, user: User): Observable<User> {
     return this.http.put<User>(`${this.apiUrl}/${userId}`, user, this.httpOptions);
   }
