@@ -51,25 +51,20 @@ export class CartService {
   
 
   async addOrder(): Promise<any> {
-    // console.log(localStorage'.getItem("customerId"));
-
-
+   
     if (this.authService.currentUserValue != null && this.authService.currentUserValue.id > 0) {
-
-
 
       let orderitem: Order = {           // this is an object which stores customer_id, all of the ordereditems details and date when these have been ordered
         userId: this.authService.currentUserValue.id,
         orderDetails: this.basket,
 
       }
-      var result = await firstValueFrom(this.orderService.storeOrder(orderitem));
+      var result = await firstValueFrom(this.orderService.storeOrder(orderitem));//calling storeCartItem function for storing all of the ordereditems deatils into the database.
       return result;
-      //calling storeCartItem function for storing all of the ordereditems deatils into the database. 
-      // this.orderService.storeOrder(orderitem);//.subscribe(x => console.log(x));  //calling storeCartItem function for storing all of the ordereditems deatils into the database. 
+      
     } else {
       this.userName = sessionStorage.getItem('guestuserName');
-     //var user =await firstValueFrom(this.userService.getUserbyUserName(this.userName))
+    
     var user=  await firstValueFrom(this.userService.getUserbyUserName(this.userName))
     this.id=user.id;
 

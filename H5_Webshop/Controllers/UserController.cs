@@ -150,7 +150,7 @@ namespace H5_Webshop.Controllers
             }      
 
         }*/
-        [Authorize(Role.Guest)]
+        
         [AllowAnonymous]
         [HttpGet("{userName}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -166,7 +166,7 @@ namespace H5_Webshop.Controllers
             {
 
                 UserResponse user = await _userService.GetIdByUserName(userName);
-                //int id= user.Id;
+                
 
                 if (user == null)
                 {

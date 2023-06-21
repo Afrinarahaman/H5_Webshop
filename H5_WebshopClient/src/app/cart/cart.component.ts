@@ -34,26 +34,12 @@ export class CartComponent implements OnInit {
       var result = await this.cartService.addOrder();
       console.log('result', result);
              this.cartService.clearBasket();
-              
+           
            this.router.navigate(['/thankyou/']);
+          
            
     }
-      /*if (this.authService.currentUserValue == null || this.authService.currentUserValue.id == 0) {
-        
-        this.router.navigate(['choose_option']);
-      }
-    
-
-    else {
-
-
-      var result = await this.cartService.addOrder();
-      console.log('result', result);
-             this.cartService.clearBasket();    
-           this.router.navigate(['/thankyou/'+result.id]);
-           
-
-    }*/
+      
 
       }
   public basket = this.cartService.basket;
@@ -65,59 +51,15 @@ export class CartComponent implements OnInit {
 
 
     }
-    // this.cartProducts=this.cartService.getBasket();
-    //   this.grandTotal= this.cartService.getTotalPrice();
-    //   this.cartService.saveBasket();
+   
     window.location.reload();
   }
   emptycart() {
     if (confirm("are u sure to remove?"))
       this.cartService.clearBasket();
-    // this.cartProducts=this.cartService.getBasket();
-    // this.grandTotal= this.cartService.getTotalPrice();
-    // this.cartService.saveBasket();
+   
     window.location.reload();
 
   }
- /* increase(item: CartItem) {
-    let itemId;
-    itemId = this.cartService.basket.findIndex(({ productId }) => productId == item.productId);
-
-
-
-    item.quantity = item.quantity + 1;
-    this.basket[itemId].quantity = item.quantity;
-
-
-    this.cartService.saveBasket4(this.basket);
-    this.cartProducts = this.cartService.getBasket();
-    this.grandTotal = this.cartService.getTotalPrice();
-
-
-
-
-  }
-  decrease(item: CartItem) {
-    if (item.quantity > 1) {
-
-      let itemId;
-      itemId = this.cartService.basket.findIndex(({ productId }) => productId == item.productId);
-
-
-
-      item.quantity = item.quantity - 1;
-      this.basket[itemId].quantity = item.quantity;
-
-
-      this.cartService.saveBasket4(this.basket);
-      this.cartProducts = this.cartService.getBasket();
-      this.grandTotal = this.cartService.getTotalPrice();
-
-    }
-    else {
-      alert("Quantity can not be negative.")
-    }
-    this.cartService.saveBasket();
-  }*/
-
+ 
 }
