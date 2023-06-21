@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../_models/user';
 import { UserService } from '../_services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -19,6 +20,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private userService: UserService,
+    private router:Router
    
   ) { }
 
@@ -38,6 +40,7 @@ export class RegisterComponent implements OnInit {
   cancel(): void {
     this.message = [];
     this.user = this.newUser();
+    this.router.navigate(['/']);
   }
 
   save(): void {

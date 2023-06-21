@@ -42,6 +42,7 @@ export class GuestComponent implements OnInit {
   cancel(): void {
     this.message = [];
     this.user = this.newUser();
+    this.router.navigate(['/']);
   }
 
    save(): void {
@@ -81,12 +82,7 @@ export class GuestComponent implements OnInit {
                         alert("User already exists!");
           }
         });
-      } else {
-            this.userService.updateUser(this.user.id, this.user)
-              .subscribe(() => {
-                this.user = this.newUser();
-              });
-           }
+      } 
   }}
 
 
