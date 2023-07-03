@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\moner\\source\\repos\\H5_Webshop\\H5_Webshop\\H5_Webshop.csproj": {}
+    "C:\\Users\\Rm\\Source\\Repos\\Afrinarahaman\\H5_Webshop\\H5_Webshop\\H5_Webshop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\moner\\source\\repos\\H5_Webshop\\H5_Webshop\\H5_Webshop.csproj": {
+    "C:\\Users\\Rm\\Source\\Repos\\Afrinarahaman\\H5_Webshop\\H5_Webshop\\H5_Webshop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\moner\\source\\repos\\H5_Webshop\\H5_Webshop\\H5_Webshop.csproj",
+        "projectUniqueName": "C:\\Users\\Rm\\Source\\Repos\\Afrinarahaman\\H5_Webshop\\H5_Webshop\\H5_Webshop.csproj",
         "projectName": "H5_Webshop",
-        "projectPath": "C:\\Users\\moner\\source\\repos\\H5_Webshop\\H5_Webshop\\H5_Webshop.csproj",
-        "packagesPath": "C:\\Users\\moner\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\moner\\source\\repos\\H5_Webshop\\H5_Webshop\\obj\\",
+        "projectPath": "C:\\Users\\Rm\\Source\\Repos\\Afrinarahaman\\H5_Webshop\\H5_Webshop\\H5_Webshop.csproj",
+        "packagesPath": "C:\\Users\\Rm\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rm\\Source\\Repos\\Afrinarahaman\\H5_Webshop\\H5_Webshop\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\moner\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Rm\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,8 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -85,8 +79,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -98,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
